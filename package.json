@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +23,6 @@
   "devDependencies": {
     "expect": "^24.1.0",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.10",
     "supertest": "^3.4.2"
   }
 }

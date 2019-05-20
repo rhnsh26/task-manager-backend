@@ -18,12 +18,10 @@ router.post("/todo", auth, async (req, res) => {
 });
 
 router.get("/todos", auth, async (req, res) => {
-  const match = { completed: req.query.completed === "true" };
   try {
     await res.locals.user
       .populate({
-        path: "mytodos",
-        match
+        path: "mytodos"
       })
       .execPopulate();
     res.status(200).send(res.locals.user.mytodos);
