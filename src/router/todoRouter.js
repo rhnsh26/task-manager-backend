@@ -21,7 +21,12 @@ router.get("/todos", auth, async (req, res) => {
   try {
     await res.locals.user
       .populate({
-        path: "mytodos"
+        path: "mytodos",
+        options: {
+          sort: {
+            createdAt: -1
+          }
+        }
       })
       .execPopulate();
     res.status(200).send(res.locals.user.mytodos);
